@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import auth from '../api';
 
 export default function Login() {
   const [input, setInput] = useState({ email: '', password: '' });
@@ -11,18 +12,7 @@ export default function Login() {
   // fetch авторизации
   const submitHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch('/auth/login', {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(input),
-    });
-    if (response.ok) {
-      window.location.href = '/';
-      setInput({ email: '', password: '' });
-    } else {
-      const data = await response.json();
-      setErr(data.message);
-    }
+    auth(input);
   };
   return (
     <form onSubmit={submitHandler}>

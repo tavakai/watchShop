@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Login from './auth/Login';
-import Registration from './auth/Registration';
+import Main from './Main';
 import Navbar from './Navbar';
+import Orders from './Orders';
 
 export default function App({ user }) {
   return (
     <div className="container">
       <Navbar user={user} />
       <Routes>
-        <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/registration" element={<Registration />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/orders" element={<Orders />} />
       </Routes>
     </div>
   );
