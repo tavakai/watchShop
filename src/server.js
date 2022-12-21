@@ -5,6 +5,8 @@ import session from 'express-session';
 import store from 'session-file-store';
 import indexRouter from './routers/indexRouter';
 import apiRouter from './routers/apiRouter';
+import catalogRouter from './routers/catalogRouter';
+import adminRouter from './routers/adminRouter';
 import jsxRender from './utils/jsxRender';
 import { pathMiddleware } from './middlewares/pathMiddleware';
 import authRouter from './routers/authRouter';
@@ -43,6 +45,8 @@ app.use(pathMiddleware);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);
+app.use('/catalog', catalogRouter);
+app.use('/admin', adminRouter);
 app.use('/order', orderRouter);
 
 app.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
