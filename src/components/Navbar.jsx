@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../components/Modals/Modal';
 
 export default function Navbar({ user }) {
+  const [modalContent, setModalContent] = useState('');
+  function handleClick(event) {
+    const recipient = event.target.getAttribute('data-bs-whatever');
+    if (recipient === 'signUp') {
+      setModalContent('signUp');
+    } else {
+      setModalContent('signIn');
+    }
+  }
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -9,14 +19,29 @@ export default function Navbar({ user }) {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
+
+          <div className="menu">
+            <div className="nav-item">
+              <a className="scroll-to" aria-current="page" href="#catalog">Каталог</a>
+            </div>
+
+            <div className="nav-item">
+              <a className="scroll-to" aria-current="page" href="#orderForm">Сделать заказ</a>
+            </div>
+
+            <div className="nav-item">
+              <a className="scroll-to" aria-current="page" href="#footer">Контакты</a>
+            </div>
+          </div>
+
           <ul className="navbar-nav">
             {!user ? (
               <>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/auth/login">Login</a>
+                  <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/auth/registration">Registration</a>
+                  <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
                 </li>
               </>
             ) : (
@@ -34,6 +59,7 @@ export default function Navbar({ user }) {
           </ul>
         </div>
       </div>
+      <Modal modalContent={modalContent} />
     </nav>
   );
 }
