@@ -8,6 +8,7 @@ import apiRouter from './routers/apiRouter';
 import jsxRender from './utils/jsxRender';
 import { pathMiddleware } from './middlewares/pathMiddleware';
 import authRouter from './routers/authRouter';
+import orderRouter from './routers/orderRouter';
 
 require('dotenv').config();
 
@@ -42,5 +43,6 @@ app.use(pathMiddleware);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);
+app.use('/order', orderRouter);
 
 app.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
