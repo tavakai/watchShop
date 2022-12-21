@@ -10,6 +10,7 @@ import adminRouter from './routers/adminRouter';
 import jsxRender from './utils/jsxRender';
 import { pathMiddleware } from './middlewares/pathMiddleware';
 import authRouter from './routers/authRouter';
+import orderRouter from './routers/orderRouter';
 
 require('dotenv').config();
 
@@ -46,5 +47,6 @@ app.use('/auth', authRouter);
 app.use('/api', apiRouter);
 app.use('/catalog', catalogRouter);
 app.use('/admin', adminRouter);
+app.use('/order', orderRouter);
 
 app.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
