@@ -1,8 +1,12 @@
 import React from 'react';
+import Cards from './catalog/Cards';
 
 function Main(props) {
   return (
-    <div />
+    <div>
+      {' '}
+      <Cards />
+    </div>
   );
 }
 
