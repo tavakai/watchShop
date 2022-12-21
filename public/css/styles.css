@@ -1,4 +1,4 @@
-#uno{ 
-    width: '15rem';
-    margin: '15px';
+.buttons {
+    display: flex;
+    gap: 10px;
 }
