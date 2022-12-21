@@ -10,7 +10,7 @@ export default function App({ user }) {
       <Navbar user={user} />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/orders" element={<Orders />} />
+        <Route path="/admin" element={<Orders />} />
       </Routes>
     </div>
   );
