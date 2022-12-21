@@ -1,5 +1,6 @@
 import React from 'react';
 import Cards from './catalog/Cards';
+import Orderform from './orderForm/Orderform';
 
 function Main() {
   return (
@@ -44,6 +45,9 @@ function Main() {
         <br />
 
       </div>
+
+      <Cards />
+      <Orderform />
       <div
         className="footer"
         id="footer"
