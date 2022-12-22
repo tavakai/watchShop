@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../components/Modals/Modal';
+import Modal from './Modals/Modal';
 
 export default function Navbar({ user }) {
   const [modalContent, setModalContent] = useState('');
@@ -12,6 +12,7 @@ export default function Navbar({ user }) {
     }
   }
   return (
+
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">Watch Shop</a>
