@@ -24,4 +24,13 @@ router.delete('/delete/:id', async (req, res) => {
   res.sendStatus(200);
 });
 
+router.patch('/edit/:id', async (req, res) => {
+  const edit = await Order.findOne({ where: { id: req.params.id } });
+  const { name, image } = req.body;
+  edit.name = name;
+  edit.image = image;
+  edit.save();
+  res.sendStatus(200);
+});
+
 export default router;

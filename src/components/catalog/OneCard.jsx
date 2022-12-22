@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function OneCard({ card, deleteHandler, completeHandler }) {
+export default function OneCard({
+  card, deleteHandler, completeHandler, setCardId,
+}) {
   return (
     <div
-      className="card"
+      className="card card-hover"
       style={{
         width: '18rem', margin: '15px', padding: '15px', textAlign: 'center',
       }}
@@ -23,7 +25,15 @@ export default function OneCard({ card, deleteHandler, completeHandler }) {
         {!card.status
           ? (
             <div className="buttons btn-group" role="group" aria-label="Basic outlined example">
-              <button type="submit" className="btn btn-outline-warning">Изменить</button>
+              <button
+                type="submit"
+                className="btn btn-outline-warning"
+                data-bs-whatever="editCard"
+                onClick={() => setCardId(card.id)}
+              >
+                Изменить
+
+              </button>
               <button
                 type="button"
                 className="btn btn-outline-success"
