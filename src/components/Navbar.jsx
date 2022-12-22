@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modals/Modal';
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, adminCards }) {
   const [modalContent, setModalContent] = useState('');
   function handleClick(event) {
     const recipient = event.target.getAttribute('data-bs-whatever');
@@ -11,6 +11,14 @@ export default function Navbar({ user }) {
       setModalContent('signIn');
     }
   }
+
+  const adminButton = () => {
+    fetch('/admin')
+      .then(() => {
+        window.location.href = '/admin';
+      });
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -36,14 +44,15 @@ export default function Navbar({ user }) {
                 <a href="#footer"><button type="button" className="btn btn-dark">Контакты</button></a>
               </div>
 
+              <div />
               <ul className="navbar-nav">
                 {!user ? (
                   <>
                     <li className="nav-item">
-                      <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
+                      <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
                     </li>
                     <li className="nav-item">
-                      <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
+                      <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
                     </li>
                   </>
                 ) : (
@@ -58,6 +67,18 @@ export default function Navbar({ user }) {
                     </li>
                   </>
                 )}
+                {user?.isAdmin && (
+                <div>
+                  <button type="button" onClick={(e) => adminButton(e)} className="btn btn-primary position-relative btn btn-dark">
+                    Заказы
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      {adminCards.length}
+                      <span className="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+                </div>
+                )}
+
               </ul>
             </div>
           </div>

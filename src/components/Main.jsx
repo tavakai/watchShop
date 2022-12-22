@@ -2,7 +2,9 @@ import React from 'react';
 import Cards from './catalog/Cards';
 import Orderform from './orderForm/Orderform';
 
+
 function Main({ user }) {
+
   return (
     <>
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
