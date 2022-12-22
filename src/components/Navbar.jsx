@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../components/Modals/Modal';
+import Modal from './Modals/Modal';
 
 export default function Navbar({ user }) {
   const [modalContent, setModalContent] = useState('');
@@ -14,7 +14,9 @@ export default function Navbar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">Watch Shop</a>
+        <a className="navbar-brand" href="/">
+          <img src="../img/watchshoplogo.png" alt="watch-logo" width="100" height="80" />
+        </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>
@@ -22,15 +24,15 @@ export default function Navbar({ user }) {
 
           <div className="menu">
             <div className="nav-item">
-              <a className="scroll-to" aria-current="page" href="#catalog">Каталог</a>
+              <a className="scroll-to" aria-current="page" href="#catalog"><button type="button" className="btn btn-dark">Каталог</button></a>
             </div>
 
             <div className="nav-item">
-              <a className="scroll-to" aria-current="page" href="#orderForm">Сделать заказ</a>
+              <a className="scroll-to" aria-current="page" href="#orderForm"><button type="button" className="btn btn-dark">Сделать заказ</button></a>
             </div>
 
             <div className="nav-item">
-              <a className="scroll-to" aria-current="page" href="#footer">Контакты</a>
+              <a href="#footer"><button type="button" className="btn btn-dark">Контакты</button></a>
             </div>
           </div>
 

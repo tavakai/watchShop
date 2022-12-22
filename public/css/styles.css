@@ -8,3 +8,28 @@
 .buttons {
     display: flex;
 }
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.navbar-brand {
+    width: 150px;
+    height: 100px;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
+.shop-logo {
+    width: 20%;
+}
