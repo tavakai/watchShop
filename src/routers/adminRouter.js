@@ -12,4 +12,11 @@ router.get('/orders', async (req, res) => {
   res.json(cards);
 });
 
+router.get('/complete/:id', async (req, res) => {
+  const completeOrder = await Order.findOne({ where: { id: req.params.id } });
+  completeOrder.status = true;
+  completeOrder.save();
+  return res.sendStatus(200);
+});
+
 export default router;
