@@ -27,6 +27,16 @@ class Api {
     return request;
   };
 
+  // Редактирование карточки заказа
+  editCard = async (cardValue, id) => {
+    const request = await fetch(`/admin/edit/${id}`, {
+      method: 'PATCH',
+      headers: this.headers,
+      body: JSON.stringify(cardValue),
+    });
+    return request;
+  };
+
   // Метод проверки ответа и преобразование в json
   getResponseData(response) {
     if (!response.ok) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Orderform() {
+export default function Orderform({ user }) {
   // контролирует инпуты
   const [input, setInput] = useState({ name: '', image: '' });
   // выводит ошибку, если в заказе не все указано
@@ -14,7 +14,7 @@ export default function Orderform() {
 
   const orderHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch('/order', {
+    const response = await fetch(`/order/${user.id}`, {
       method: 'POST',
       headers: { 'Content-type': 'application/json;charSet=utf-8' },
       body: JSON.stringify(input),
