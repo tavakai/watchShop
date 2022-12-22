@@ -45,8 +45,6 @@ function Main() {
           <span className="visually-hidden">Следующий</span>
         </button>
         <br />
-      </div>
-
       <Cards />
       <Orderform />
       <br />
