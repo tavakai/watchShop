@@ -35,18 +35,22 @@ export default function Orderform() {
       {orderTrue ? (
         <>
           {/* выводит "Заказ отправлен!" */}
-          {message && <h2>{message}</h2>}
+          {message && (
+          <div className="orderInputOut">
+            <h2>{message}</h2>
+          </div>
+          )}
         </>
       ) : (
         <form onSubmit={orderHandler} id="orderForm" className="order">
           <h3 className="orderCenter">Заказать уникальные часы</h3>
           {/* выводит ошибку при заказе */}
-          {message && <h2>{message}</h2>}
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Введите название ваших часов</label>
+          {message && <h2 className="orderInput ordeStatusRed">{message}</h2>}
+          <div className="mb-3 orderInput">
+            <label htmlFor="exampleInputEmail1" className="form-label orderInput">Введите название ваших часов</label>
             <input type="text" name="name" value={input.name} onChange={changeHandler} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
           </div>
-          <div className="mb-3">
+          <div className="mb-3 orderInput">
             <label htmlFor="exampleInputPassword1" className="form-label">Укажите ссылку на пример подходящих вам часов</label>
             <input type="text" name="image" value={input.image} onChange={changeHandler} className="form-control" id="exampleInputPassword1" />
           </div>
