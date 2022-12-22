@@ -1,7 +1,35 @@
+.testing {
+    width: 18rem;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
 .buttons {
     display: flex;
-    gap: 10px;
 }
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.navbar-brand {
+    width: 150px;
+    height: 100px;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
 footer {
     height: 100px;
     width: 1300px;

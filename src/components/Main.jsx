@@ -64,7 +64,6 @@ function Main() {
           </footer>
         </div>
       </div> */}
-
     </>
   );
 }
