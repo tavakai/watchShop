@@ -20,7 +20,7 @@ export default function Cards() {
   return (
     <>
       <div id="catalog" className="row">
-        {cards.map((el) => <OneCard key={el.id} card={el} deleteHandler={deleteHandler} setCardId={setCardId} />)}
+        {cards?.map((el) => <OneCard key={el.id} card={el} deleteHandler={deleteHandler} setCardId={setCardId} />)}
       </div>
       <div>
         <Modal cardId={cardId} />
