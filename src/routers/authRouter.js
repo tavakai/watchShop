@@ -42,6 +42,7 @@ router.post('/registration', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+  console.log(req.body);
   // достаем email и password
   const { email, password } = req.body;
   // проверка на заполнение всех полей
