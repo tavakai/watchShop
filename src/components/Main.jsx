@@ -48,7 +48,7 @@ function Main({ user }) {
         </button>
       </div>
       <br />
-      <Cards />
+      <Cards user={user}/>
       <Orderform user={user} />
       <br />
       <footer>
