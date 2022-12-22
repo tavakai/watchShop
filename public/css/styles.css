@@ -24,3 +24,28 @@
 .nav-item {
     margin-right: 10px;
 }
+
+footer {
+    height: 100px;
+    width: 1300px;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 21px;
+    border-radius: 10px 10px 0 0;
+    background-color: #6a6b6b;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+.order {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.orderCenter {
+    text-align: center;
+    margin: 20px;
+}
