@@ -1,4 +1,5 @@
 const path = require('path');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 const config = {
   entry: {
@@ -23,6 +24,9 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new NodePolyfillPlugin(),
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.wasm', '.mjs', '*'],
   },

@@ -2,10 +2,9 @@ import React from 'react';
 import Cards from './catalog/Cards';
 import Orderform from './orderForm/Orderform';
 
-function Main() {
 
+function Main({ user }) {
 
-  
   return (
     <>
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -50,23 +49,15 @@ function Main() {
       </div>
       <br />
       <Cards />
-      <Orderform />
+      <Orderform user={user} />
       <br />
       <footer>
-        <div className="info">
+        <div id="footer" className="info">
           <div className="info_links">
             <p>© 1999–2022 интернет-магазин наручных часов Watch-shop.ru</p>
           </div>
         </div>
       </footer>
-
-      {/* <div className="feet-item">
-        <div id="footer">
-          <footer>
-            <p>© 2018 Watch shop</p>
-          </footer>
-        </div>
-      </div> */}
     </>
   );
 }

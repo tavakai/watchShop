@@ -17,8 +17,10 @@ export default function App({ user }) {
     <div className="container">
       <Navbar adminCards={adminCards} user={user} />
       <Routes>
+
         <Route path="/" element={<Main />} />
         <Route path="/admin" element={<Orders adminCards={adminCards} setAdminCards={setAdminCards} />} />
+
       </Routes>
     </div>
   );
