@@ -12,7 +12,7 @@ export default function Navbar({ user }) {
     }
   }
   return (
-
+    <>
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
@@ -35,34 +35,34 @@ export default function Navbar({ user }) {
             <div className="nav-item">
               <a href="#footer"><button type="button" className="btn btn-dark">Контакты</button></a>
             </div>
-          </div>
 
-          <ul className="navbar-nav">
-            {!user ? (
-              <>
-                <li className="nav-item">
-                  <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
-                </li>
-                <li className="nav-item">
-                  <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
-                </li>
-              </>
-            ) : (
-              <>
-                <h5>
-                  Привет
-                  {' '}
-                  {user.name}
-                </h5>
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/auth/logout">Logout</a>
-                </li>
-              </>
-            )}
-          </ul>
+            <ul className="navbar-nav">
+              {!user ? (
+                <>
+                  <li className="nav-item">
+                    <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
+                  </li>
+                  <li className="nav-item">
+                    <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <h5>
+                    Привет
+                    {' '}
+                    {user.name}
+                  </h5>
+                  <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" href="/auth/logout">Logout</a>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
       <Modal modalContent={modalContent} />
-    </nav>
+    </>
   );
 }

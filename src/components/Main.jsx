@@ -53,7 +53,6 @@ function Main() {
           <div className="info_links">
             <p>© 1999–2022 интернет-магазин наручных часов Watch-shop.ru</p>
           </div>
-
         </div>
       </footer>
 
