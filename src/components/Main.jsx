@@ -2,7 +2,7 @@ import React from 'react';
 import Cards from './catalog/Cards';
 import Orderform from './orderForm/Orderform';
 
-function Main() {
+function Main({ user }) {
   return (
     <>
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -47,7 +47,7 @@ function Main() {
       </div>
       <br />
       <Cards />
-      <Orderform />
+      <Orderform user={user} />
       <br />
       <footer>
         <div className="info">
