@@ -44,7 +44,8 @@ function Main() {
           <span className="carousel-control-next-icon" aria-hidden="true" />
           <span className="visually-hidden">Следующий</span>
         </button>
-        <br />
+      </div>
+      <br />
       <Cards />
       <Orderform />
       <br />
