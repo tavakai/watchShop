@@ -2,3 +2,22 @@
     display: flex;
     gap: 10px;
 }
+
+footer {
+  
+    height: 100px;
+    width: 1300px;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 21px;
+    border-radius: 10px 10px 0 0;
+    background-color: #6a6b6b;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+
+
+
