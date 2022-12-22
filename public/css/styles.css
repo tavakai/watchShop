@@ -54,3 +54,25 @@ footer {
     text-align: center;
     margin: 20px;
 }
+.orderInput{
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+.orderInputOut{
+    margin: 0 auto;
+    text-align: center;
+    background: lightgray;
+    height: 342px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.ordeStatusRed{
+    color: red;
+}
