@@ -9,9 +9,20 @@ function Orders(props) {
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
+
+  const completeHandler = async (id) => {
+    await fetch(`/admin/complete/${id}`)
+      .then(() => setCards((prev) => prev.filter((el) => el.id !== id)));
+  };
+
+  const deleteHandler = async (id) => {
+    await fetch(`/admin/delete/${id}`, { method: 'DELETE' })
+      .then(() => setCards((prev) => prev.filter((el) => el.id !== id)));
+  };
+
   return (
     <div className="row">
-      {cards.map((el) => <OneCard key={el.id} card={el} />)}
+      {cards.map((el) => <OneCard key={el.id} card={el} completeHandler={completeHandler} deleteHandler={deleteHandler} />)}
     </div>
   );
 }
