@@ -21,6 +21,7 @@ export default function Navbar({ user, adminCards }) {
 
   return (
     <>
+
       <nav className="navbar sticky-top navbar-expand-lg bg-light">
         <div className="container-fluid">
           <a className="navbar-logo" href="/">
@@ -51,7 +52,6 @@ export default function Navbar({ user, adminCards }) {
               <div className="nav-item">
                 <a href="#footer"><button type="button" className="btn btn-dark">Контакты</button></a>
               </div>
-
               <ul className="navbar-nav nav-item">
                 {user?.isAdmin && (
                 <div>

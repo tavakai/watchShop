@@ -51,6 +51,7 @@ function Main({ user }) {
       <Description />
       <Orderform user={user} />
       <br />
+
       <footer>
         <div id="footer" className="info">
           <div className="info_links">
