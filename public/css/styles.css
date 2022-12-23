@@ -5,14 +5,20 @@
     text-align: center;
 }
 
+.card-body {
+    position: relative;
+}
+
 .buttons {
     display: flex;
+    position: absolute;
+    margin-top: auto;
 }
 
 .navbar-collapse {
     display: flex;
     justify-content: space-around;
-    gap: 20px;
+
 }
 
 .menu {
@@ -67,7 +73,7 @@ margin-top: 20px;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #catalog {
@@ -99,7 +105,6 @@ margin-top: 20px;
 }
 
 .container {
-    
     background-color: white;
 }
 
@@ -116,5 +121,30 @@ margin-top: 20px;
 .orderCenter{
     color: #000;
     border-color: lightgrey;
+    }
+.menu {
+    display: flex;
+    align-items: center;
 }
 
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    max-width: 210px
+}
+
+#logo {
+    min-width: 210px;
+}
+
+#carouselExampleCaptions {
+    margin-top: 10px;
+}
+
+.description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

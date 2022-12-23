@@ -42,10 +42,8 @@ router.post('/:userId', async (req, res) => {
   await Order.create({
     name, image, userId,
   });
-  res.status(200).json({ message: 'Ваш заказ отправлен! Ожидайте подтверждение заказа на Email!' });
-
   await sendemail(userFromMail.email, textEmail(name, image));
-  res.sendStatus(200);
+  res.status(200).json({ message: 'Ваш заказ отправлен! Ожидайте подтверждение заказа на Email!' });
 });
 
 export default router;
