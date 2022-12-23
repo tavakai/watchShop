@@ -22,7 +22,7 @@ export default function Navbar({ user, adminCards }) {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
+        <div className="container-fluid" style={{ backgroundColor: '#d3d3d3' }}>
           <a className="navbar-brand" href="/">
             <img src="../img/logo2.png" alt="watch-logo" width="50%" />
           </a>
@@ -58,7 +58,6 @@ export default function Navbar({ user, adminCards }) {
                 ) : (
                   <>
                     <h5>
-                      Привет
                       {' '}
                       {user.name}
                     </h5>

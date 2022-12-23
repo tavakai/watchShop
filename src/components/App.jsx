@@ -18,7 +18,7 @@ export default function App({ user }) {
       <Navbar adminCards={adminCards} user={user} />
       <Routes>
 
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main user={user} />} />
         <Route path="/admin" element={<Orders adminCards={adminCards} setAdminCards={setAdminCards} />} />
 
       </Routes>
