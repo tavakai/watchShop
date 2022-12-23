@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import OneCard from './catalog/OneCard';
+import ModalEdit from './Modals/ModalEdit';
 
-function Orders({ adminCards, setAdminCards }) {
+function Orders({ setAdminCards }) {
   const [cards, setCards] = useState([]);
+  const [editModals, setEditModals] = useState('');
 
   useEffect(() => {
     fetch('/admin/orders')
@@ -12,6 +14,11 @@ function Orders({ adminCards, setAdminCards }) {
         setCards(data);
       });
   }, []);
+
+  const editHandleClick = (event) => {
+    const recipient = event.target.getAttribute('data-bs-whatever');
+    if (recipient === 'editCard') setEditModals('signUp');
+  };
 
   const completeHandler = async (id) => {
     await fetch(`/admin/complete/${id}`)
@@ -26,8 +33,10 @@ function Orders({ adminCards, setAdminCards }) {
   return (
     <div className="row">
 
-      {cards?.map((el) => <OneCard key={el.id} card={el} completeHandler={completeHandler} deleteHandler={deleteHandler} />)}
-
+      {cards?.map((el) => <OneCard key={el.id} card={el} completeHandler={completeHandler} deleteHandler={deleteHandler} editHandleClick={editHandleClick} />)}
+      <div>
+        <ModalEdit editModals={editModals} />
+      </div>
     </div>
   );
 }

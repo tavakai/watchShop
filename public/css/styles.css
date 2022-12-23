@@ -5,14 +5,20 @@
     text-align: center;
 }
 
+.card-body {
+    position: relative;
+}
+
 .buttons {
     display: flex;
+    position: absolute;
+    margin-top: auto;
 }
 
 .navbar-collapse {
     display: flex;
     justify-content: space-around;
-    gap: 20px;
+
 }
 
 .menu {
@@ -27,17 +33,23 @@
 
 footer {
     height: 100px;
-    width: 1300px;
-    color: #fff;
+    max-width: 1300px;
+    color: #000;
     font-family: Roboto;
     font-size: 17px;
     font-weight: 200;
     line-height: 21px;
     border-radius: 10px 10px 0 0;
-    background-color: #6a6b6b;
+    background-color: lightgrey;
     margin: 0 auto;
     max-width: 1300px;
 }
+
+.text {
+display: flex;
+margin-top: 20px;
+}
+
 .order {
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -61,7 +73,7 @@ footer {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #catalog {
@@ -93,4 +105,49 @@ footer {
 }
 .orderMessage{
     margin: 20px;
+}
+
+.container {
+    background-color: white;
+}
+
+.navbar-expand-lg {
+    background-color: white;
+    margin-bottom: 0;
+}
+
+.orderInput {
+    background-color: white;
+    color: #000;
+}
+
+.orderCenter{
+    color: #000;
+    border-color: lightgrey;
+    }
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    max-width: 210px
+}
+
+#logo {
+    min-width: 210px;
+}
+
+#carouselExampleCaptions {
+    margin-top: 10px;
+}
+
+.description {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

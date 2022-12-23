@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function OneCard({
-  card, deleteHandler, completeHandler, setCardId,
+  card, deleteHandler, completeHandler, setCardId, editHandleClick, user,
 }) {
   return (
     <div
@@ -10,14 +10,14 @@ export default function OneCard({
         width: '18rem', margin: '15px', padding: '15px', textAlign: 'center',
       }}
     >
-      {/* Сделать для этой кнопки проверку на админа */}
-      <button
-        type="button"
-        className="btn-close"
-        aria-label="Close"
-        onClick={() => deleteHandler(card.id)}
-      />
-      {/* Сделать для этой кнопки проверку на админа */}
+      {user?.isAdmin && (
+        <button
+          type="button"
+          className="btn-close"
+          aria-label="Close"
+          onClick={() => deleteHandler(card.id)}
+        />
+      )}
 
       <img src={card.image} className="card-img-top" alt="watches" />
       <div className="card-body">
@@ -28,8 +28,13 @@ export default function OneCard({
               <button
                 type="submit"
                 className="btn btn-outline-warning"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
                 data-bs-whatever="editCard"
-                onClick={() => setCardId(card.id)}
+                onClick={(e) => {
+                  editHandleClick(e);
+                  setCardId(card.id);
+                }}
               >
                 Изменить
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Modal from '../Modals/Modal';
 import OneCard from './OneCard';
 
-export default function Cards() {
+export default function Cards({ user }) {
   const [cards, setCards] = useState([]);
   const [cardId, setCardId] = useState('');
 
@@ -20,10 +20,10 @@ export default function Cards() {
   return (
     <>
       <div id="catalog" className="row">
-        {cards?.map((el) => <OneCard key={el.id} card={el} deleteHandler={deleteHandler} setCardId={setCardId} />)}
+        {cards?.map((el) => <OneCard key={el.id} card={el} deleteHandler={deleteHandler} setCardId={setCardId} user={user} />)}
       </div>
       <div>
-        <Modal cardId={cardId} />
+        <Modal />
       </div>
     </>
   );

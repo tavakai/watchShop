@@ -1,20 +1,16 @@
 import React from 'react';
-import Form from './Form/Form';
+import EditForm from './Form/EditForm';
 
-function Modal({ modalContent }) {
+function ModalEdit({ cardId, editModals }) {
   return (
     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
-          {
-            modalContent === 'signUp' || modalContent === 'signIn' ? (
-              <Form modalContent={modalContent} />
-            ) : null
-          }
+          <EditForm cardId={cardId} />
         </div>
       </div>
     </div>
   );
 }
 
-export default Modal;
+export default ModalEdit;
