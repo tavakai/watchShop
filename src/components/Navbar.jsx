@@ -3,6 +3,7 @@ import Modal from './Modals/Modal';
 
 export default function Navbar({ user, adminCards }) {
   const [modalContent, setModalContent] = useState('');
+
   function handleClick(event) {
     const recipient = event.target.getAttribute('data-bs-whatever');
     if (recipient === 'signUp') {

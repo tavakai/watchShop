@@ -22,7 +22,10 @@ function Orders({ setAdminCards }) {
 
   const completeHandler = async (id) => {
     await fetch(`/admin/complete/${id}`)
-      .then(() => setCards((prev) => prev.filter((el) => el.id !== id)));
+      .then(() => {
+        setCards((prev) => prev.filter((el) => el.id !== id));
+        setAdminCards((prev) => prev.filter((el) => el.id !== id));
+      });
   };
 
   const deleteHandler = async (id) => {
