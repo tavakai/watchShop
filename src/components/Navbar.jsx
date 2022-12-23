@@ -74,7 +74,7 @@ export default function Navbar({ user, adminCards, handleClickNavBar }) {
                   <div className="font-monospace fs-3">{user.name}</div>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/auth/logout"><button type="button" className="btn btn-dark">Logout</button></a>
+                  <a className="nav-link active" aria-current="page" href="/auth/logout"><button type="button" className="btn btn-dark">Выйти</button></a>
                 </li>
               </>
             )}
