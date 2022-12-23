@@ -1,7 +1,7 @@
 import React from 'react';
 import EditForm from './Form/EditForm';
 
-function ModalEdit({ cardId, editModals }) {
+function ModalEdit({ cardId }) {
   return (
     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered">

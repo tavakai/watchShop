@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function OneCard({
-  card, deleteHandler, completeHandler, setCardId, editHandleClick, user,
+  card, deleteHandler, completeHandler, setOrderId, editHandleClick, user,
 }) {
   return (
     <div
@@ -26,14 +26,14 @@ export default function OneCard({
           ? (
             <div className="buttons btn-group" role="group" aria-label="Basic outlined example">
               <button
-                type="submit"
+                type="button"
                 className="btn btn-outline-warning"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 data-bs-whatever="editCard"
                 onClick={(e) => {
                   editHandleClick(e);
-                  setCardId(card.id);
+                  setOrderId(card.id);
                 }}
               >
                 Изменить

@@ -32,7 +32,7 @@ class Api {
     const request = await fetch(`/admin/edit/${id}`, {
       method: 'PATCH',
       headers: this.headers,
-      body: JSON.stringify(cardValue),
+      body: JSON.stringify({ ...cardValue, id }),
     });
     return request;
   };

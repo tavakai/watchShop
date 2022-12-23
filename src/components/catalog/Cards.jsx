@@ -18,13 +18,16 @@ export default function Cards({ user }) {
   };
 
   return (
-    <>
-      <div id="catalog" className="row">
-        {cards?.map((el) => <OneCard key={el.id} card={el} deleteHandler={deleteHandler} setCardId={setCardId} user={user} />)}
-      </div>
-      <div>
-        <Modal />
-      </div>
-    </>
+    <div id="catalog" className="row">
+      {cards?.map((el) => (
+        <OneCard
+          key={el.id}
+          card={el}
+          deleteHandler={deleteHandler}
+          setter={setCardId}
+          user={user}
+        />
+      ))}
+    </div>
   );
 }
