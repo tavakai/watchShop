@@ -10,7 +10,7 @@ export default function Navbar({ user, adminCards, handleClickNavBar }) {
   };
 
   return (
-    <nav className="navbar sticky-top navbar-expand-lg bg-light">
+    <nav className="navbar sticky-top navbar-expand-lg">
       <div className="container-fluid">
         <a className="navbar-logo" href="/">
           <img id="logo" src="../img/logo3.png" alt="watch-logo" width="50%" />
