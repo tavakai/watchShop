@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Preloader from '../Preloader/Preloader';
 
 export default function Orderform({ user }) {
   // контролирует инпуты
@@ -7,12 +8,14 @@ export default function Orderform({ user }) {
   const [message, setMessage] = useState(null);
   // форма - пропадает, "Заказ отправлен!" - появляется
   const [orderTrue, setOrderTrue] = useState(null);
+  const [isRequest, setIsRequest] = useState(false);
 
   const changeHandler = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const orderHandler = async (e) => {
+    setIsRequest(true);
     e.preventDefault();
     if (user) {
       const response = await fetch(`/order/${user.id}`, {
@@ -26,6 +29,7 @@ export default function Orderform({ user }) {
         setInput({ task: '', img: '' });
         setMessage(data.message);
         setOrderTrue(true);
+        setIsRequest(false);
       } else {
         const data = await response.json();
         setMessage(data.message);
@@ -60,8 +64,11 @@ export default function Orderform({ user }) {
             <input type="text" name="image" value={input.image} onChange={changeHandler} className="form-control" id="exampleInputPassword1" />
           </div>
           <div className="orderCenter">
-            <button type="submit" className="btn btn-primary">Заказать</button>
+            <button type="submit" className="btn btn-primary" disabled={isRequest ? 'disabled' : ''}>Заказать</button>
           </div>
+          {
+            isRequest && <Preloader />
+          }
         </form>
       )}
     </>
