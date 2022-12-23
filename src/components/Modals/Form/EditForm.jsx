@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../../utils/api';
 
-function EditForm({ cardId }) {
+function EditForm({ orderId }) {
   const [value, setValue] = useState({
     name: '',
     image: '',
@@ -24,7 +24,7 @@ function EditForm({ cardId }) {
   return (
     <div className="modal-body">
 
-      <form onSubmit={(e) => handleSubmit(e, cardId)}>
+      <form onSubmit={(e) => handleSubmit(e, orderId)}>
         <div className="modal-header">
           <h5 className="modal-title" id="exampleModalLabel">
             Изменить заказ

@@ -20,9 +20,9 @@ export default function Login() {
       {/* выводит ошибку при регистрации */}
       {err && <h2>{err}</h2>}
       <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">
+        <label htmlFor="InputEmail1" className="form-label">
           Email
-          <input name="email" value={input.email} onChange={changeHandler} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          <input name="email" value={input.email} onChange={changeHandler} type="email" className="form-control" id="InputEmail1" aria-describedby="emailHelp" />
         </label>
       </div>
       <div className="mb-3">

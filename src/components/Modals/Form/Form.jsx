@@ -60,9 +60,9 @@ function Form({ modalContent }) {
         ) : null
       }
             <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">
+              <label htmlFor="exampleInputEmail" className="form-label">
                 Email:
-                <input onChange={(e) => handleChange(e)} type="email" value={value.email} name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите почту" />
+                <input onChange={(e) => handleChange(e)} type="email" value={value.email} name="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Введите почту" />
               </label>
             </div>
             <div className="mb-3">

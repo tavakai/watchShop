@@ -35,9 +35,9 @@ export default function Registration() {
           </label>
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
+          <label htmlFor="InputEmailReg" className="form-label">
             Email
-            <input name="email" value={input.email} onChange={changeHandler} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <input name="email" value={input.email} onChange={changeHandler} type="email" className="form-control" id="InputEmailReg" aria-describedby="emailHelp" />
           </label>
         </div>
         <div className="mb-3">
