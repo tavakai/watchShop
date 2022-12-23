@@ -41,6 +41,10 @@ export default function Navbar({ user, adminCards }) {
               </div>
 
               <div className="nav-item">
+                <a className="scroll-to" aria-current="page" href="#shopDescription"><button type="button" className="btn btn-dark">О нас</button></a>
+              </div>
+
+              <div className="nav-item">
                 <a className="scroll-to" aria-current="page" href="#orderForm"><button type="button" className="btn btn-dark">Сделать заказ</button></a>
               </div>
 

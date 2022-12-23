@@ -5,8 +5,14 @@
     text-align: center;
 }
 
+.card-body {
+    position: relative;
+}
+
 .buttons {
     display: flex;
+    position: absolute;
+    margin-top: auto;
 }
 
 .navbar-collapse {
@@ -112,5 +118,10 @@ footer {
 
 #carouselExampleCaptions {
     margin-top: 10px;
+}
+
+.description {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
