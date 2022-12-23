@@ -91,4 +91,6 @@ footer {
 .ordeStatusRed{
     color: red;
 }
-
+.orderMessage{
+    margin: 20px;
+}

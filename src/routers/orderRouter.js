@@ -26,11 +26,11 @@ async function sendemail(email, text) {
 
 const textEmail = (name, image) => `Поздравляем! Вы успешно отправили ваш заказ на уникальные часы ручной работы!
 
-    Параметры заказа:
-    Название часов: ${name}
-    Ссылка на изображение ваших уникальных часов: ${image}
+  Параметры заказа:
+  Название часов: ${name}
+  Ссылка на изображение ваших уникальных часов: ${image}
 
-    Данное письмо не требует ответа.`;
+  Данное письмо не требует ответа.`;
 
 const router = express.Router();
 
@@ -42,10 +42,8 @@ router.post('/:userId', async (req, res) => {
   await Order.create({
     name, image, userId,
   });
-  res.status(200).json({ message: 'Ваш заказ отправлен! Ожидайте подтверждение заказа на Email!' });
-
   await sendemail(userFromMail.email, textEmail(name, image));
-  res.sendStatus(200);
+  res.status(200).json({ message: 'Ваш заказ отправлен! Ожидайте подтверждение заказа на Email!' });
 });
 
 export default router;
