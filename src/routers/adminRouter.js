@@ -1,9 +1,10 @@
 import express from 'express';
 import { Order } from '../db/models';
+import isAdmin from '../middlewares/isAdmin';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', isAdmin, (req, res) => {
   res.render('Layout');
 });
 

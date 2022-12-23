@@ -11,6 +11,7 @@ import jsxRender from './utils/jsxRender';
 import { pathMiddleware } from './middlewares/pathMiddleware';
 import authRouter from './routers/authRouter';
 import orderRouter from './routers/orderRouter';
+import isAdmin from './middlewares/isAdmin';
 
 require('dotenv').config();
 
