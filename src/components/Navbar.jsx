@@ -62,10 +62,10 @@ export default function Navbar({ user, adminCards, handleClickNavBar }) {
             {!user ? (
               <>
                 <li className="nav-item">
-                  <button onClick={(event) => handleClickNavBar(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
+                  <button onClick={(event) => handleClickNavBar(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">Регистрация</button>
                 </li>
                 <li className="nav-item">
-                  <button onClick={(event) => handleClickNavBar(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
+                  <button onClick={(event) => handleClickNavBar(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">Войти</button>
                 </li>
               </>
             ) : (
