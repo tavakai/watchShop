@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modals/Modal';
 
-export default function Navbar({ user, adminCards, handleClickNavBar }) {
-  // const [modalContent, setModalContent] = useState('');
-  // function handleClick(event) {
-  //   const recipient = event.target.getAttribute('data-bs-whatever');
-  //   if (recipient === 'signUp') {
-  //     setModalContent('signUp');
-  //   } else {
-  //     setModalContent('signIn');
-  //   }
-  // }
+export default function Navbar({ user, adminCards }) {
 
   const adminButton = () => {
     fetch('/admin')
@@ -94,7 +85,6 @@ export default function Navbar({ user, adminCards, handleClickNavBar }) {
           </div>
         </div>
       </nav>
-      {/* <Modal modalContent={modalContent} /> */}
     </>
   );
 }
