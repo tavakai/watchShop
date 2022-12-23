@@ -2,16 +2,6 @@ import React, { useState } from 'react';
 import Modal from './Modals/Modal';
 
 export default function Navbar({ user, adminCards }) {
-  const [modalContent, setModalContent] = useState('');
-
-  function handleClick(event) {
-    const recipient = event.target.getAttribute('data-bs-whatever');
-    if (recipient === 'signUp') {
-      setModalContent('signUp');
-    } else {
-      setModalContent('signIn');
-    }
-  }
 
   const adminButton = () => {
     fetch('/admin')
@@ -75,10 +65,10 @@ export default function Navbar({ user, adminCards }) {
               {!user ? (
                 <>
                   <li className="nav-item">
-                    <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
+                    <button onClick={(event) => handleClickNavBar(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signUp">signUp</button>
                   </li>
                   <li className="nav-item">
-                    <button onClick={(event) => handleClick(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
+                    <button onClick={(event) => handleClickNavBar(event)} type="button" className="btn btn-primary btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="signIn">signIn</button>
                   </li>
                 </>
               ) : (
@@ -95,7 +85,6 @@ export default function Navbar({ user, adminCards }) {
           </div>
         </div>
       </nav>
-      <Modal modalContent={modalContent} />
     </>
   );
 }

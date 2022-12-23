@@ -1,7 +1,8 @@
 import React from 'react';
+import EditForm from './Form/EditForm';
 import Form from './Form/Form';
 
-function Modal({ modalContent }) {
+function Modal({ modalContent, orderId }) {
   return (
     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered">
@@ -9,7 +10,7 @@ function Modal({ modalContent }) {
           {
             modalContent === 'signUp' || modalContent === 'signIn' ? (
               <Form modalContent={modalContent} />
-            ) : null
+            ) : <EditForm modalContent={modalContent} orderId={orderId} />
           }
         </div>
       </div>

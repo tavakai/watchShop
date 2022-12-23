@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import OneCard from './catalog/OneCard';
+import Modal from './Modals/Modal';
 import ModalEdit from './Modals/ModalEdit';
 
-function Orders({ setAdminCards }) {
+function Orders({ setAdminCards, handleClickNavBar, setOrderId }) {
   const [cards, setCards] = useState([]);
   const [editModals, setEditModals] = useState('');
 
@@ -15,10 +16,10 @@ function Orders({ setAdminCards }) {
       });
   }, []);
 
-  const editHandleClick = (event) => {
-    const recipient = event.target.getAttribute('data-bs-whatever');
-    if (recipient === 'editCard') setEditModals('signUp');
-  };
+  // const editHandleClick = (event) => {
+  //   const recipient = event.target.getAttribute('data-bs-whatever');
+  //   if (recipient === 'editCard') setEditModals('editCard');
+  // };
 
   const completeHandler = async (id) => {
     await fetch(`/admin/complete/${id}`)
@@ -36,9 +37,18 @@ function Orders({ setAdminCards }) {
   return (
     <div className="row">
 
-      {cards?.map((el) => <OneCard key={el.id} card={el} completeHandler={completeHandler} deleteHandler={deleteHandler} editHandleClick={editHandleClick} />)}
+      {cards?.map((el) => (
+        <OneCard
+          key={el.id}
+          card={el}
+          completeHandler={completeHandler}
+          deleteHandler={deleteHandler}
+          editHandleClick={handleClickNavBar}
+          setOrderId={setOrderId}
+        />
+      ))}
       <div>
-        <ModalEdit editModals={editModals} />
+        {/* <Modal modalContent={} /> */}
       </div>
     </div>
   );
