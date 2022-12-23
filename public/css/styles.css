@@ -1,0 +1,194 @@
+.testing {
+    width: 18rem;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body {
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    position: absolute;
+    margin-top: auto;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    max-width: 1300px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 21px;
+    border-radius: 10px 10px 0 0;
+    background-color: lightgrey;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+.text {
+display: flex;
+margin-top: 20px;
+}
+
+.order {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.orderCenter {
+    text-align: center;
+    margin: 20px;
+}
+
+
+.btn-close {
+    position: relative;
+    left: 92%;
+}
+
+.card {
+    transition-duration: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+#catalog {
+    display: flex;
+    justify-content: center;
+}
+
+.orderInput{
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+.orderInputOut{
+    margin: 0 auto;
+    text-align: center;
+    background: lightgray;
+    height: 342px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.ordeStatusRed{
+    color: red;
+}
+.orderMessage{
+    margin: 20px;
+}
+
+.container {
+    background-color: white;
+}
+
+.navbar-expand-lg {
+    background-color: white;
+    margin-bottom: 0;
+}
+
+.orderInput {
+    background-color: white;
+    color: #000;
+}
+
+.orderCenter{
+    color: #000;
+    border-color: lightgrey;
+    }
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    max-width: 210px
+}
+
+#logo {
+    min-width: 210px;
+}
+
+#carouselExampleCaptions {
+    margin-top: 10px;
+}
+
+.description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.socials_item {
+    max-width: 50px;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info_links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 25px;
+}
+
+footer .info {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1000px;
+}
+
+footer .footer-text {
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+footer .bottom-text {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+
