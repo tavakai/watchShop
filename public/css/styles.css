@@ -103,6 +103,9 @@ margin-top: 20px;
 .ordeStatusRed{
     color: red;
 }
+.orderMessage{
+    margin: 20px;
+}
 
 .container {
     background-color: white;

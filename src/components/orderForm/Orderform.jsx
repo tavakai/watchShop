@@ -14,19 +14,24 @@ export default function Orderform({ user }) {
 
   const orderHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch(`/order/${user.id}`, {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json;charSet=utf-8' },
-      body: JSON.stringify(input),
-    });
-    if (response.ok) {
-      const data = await response.json();
-      setInput({ task: '', img: '' });
-      setMessage(data.message);
-      setOrderTrue(true);
+    if (user) {
+      const response = await fetch(`/order/${user.id}`, {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json;charSet=utf-8' },
+        body: JSON.stringify(input),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setInput({ task: '', img: '' });
+        setMessage(data.message);
+        setOrderTrue(true);
+      } else {
+        const data = await response.json();
+        setMessage(data.message);
+      }
     } else {
-      const data = await response.json();
-      setMessage(data.message);
+      setMessage('Для заказа часов, вам необходимо зарегистрироваться.');
     }
   };
   return (
@@ -37,7 +42,7 @@ export default function Orderform({ user }) {
           {/* выводит "Заказ отправлен!" */}
           {message && (
           <div className="orderInputOut">
-            <h2>{message}</h2>
+            <h2 className="orderMessage">{message}</h2>
           </div>
           )}
         </>
