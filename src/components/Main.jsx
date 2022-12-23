@@ -55,12 +55,35 @@ function Main({ user }) {
       <footer>
         <div id="footer" className="info">
           <div className="info_links">
-            <p>© 2022 Westmorelands.ru</p>
+            <div className="footer-text left">© 2022 Westmorelands.ru</div>
+            <div className="socials">
+              <a href="//t.me/fidlersofi"><img className="socials_item" src="../img/telegram.png" alt="telegram" /></a>
+              <a href="//instagram.com/fidlersofi"><img className="socials_item" src="../img/instagram.png" alt="telegram" /></a>
+              {/* <a href="//vk.com/svovasta"><img className="socials_item" src="img/vk.svg" alt="vk" /></a> */}
+              <a href="//github.com/fidlersofi"><img className="socials_item" src="../img/github2.png" alt="github" /></a>
+            </div>
+            <ul className="footer-text bottom-text">
+              <li>
+                Москва
+                +7 (777) 777-77-77
+              </li>
+              <li>
+                Санкт-Петербург
+                +7 (111) 111-11-11
+              </li>
+            </ul>
           </div>
         </div>
       </footer>
     </>
   );
 }
+
+// Москва
+
+// +7 (495) 190-75-07
+// Санкт-Петербург
+
+// +7 (812) 627-15-07
 
 export default Main;
