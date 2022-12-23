@@ -58,9 +58,9 @@ function Main({ user }) {
             <div className="footer-text left">© 2022 Westmorelands.ru</div>
             <div className="socials">
               <a href="//t.me/fidlersofi"><img className="socials_item" src="../img/telegram.png" alt="telegram" /></a>
-              <a href="//instagram.com/fidlersofi"><img className="socials_item" src="../img/instagram.png" alt="telegram" /></a>
+              <a href="//instagram.com/_bledmolly_"><img className="socials_item" src="../img/instagram.png" alt="instagram" /></a>
               {/* <a href="//vk.com/svovasta"><img className="socials_item" src="img/vk.svg" alt="vk" /></a> */}
-              <a href="//github.com/fidlersofi"><img className="socials_item" src="../img/github2.png" alt="github" /></a>
+              <a href="//vk.com/idbledmolly"><img className="socials_item" src="../img/vk.png" alt="vk" /></a>
             </div>
             <ul className="footer-text bottom-text">
               <li>
