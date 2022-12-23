@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack && babel src --copy-files --out-dir distr",
+    "start": "node distr/server.js",
     "webpack": "webpack -wd eval-source-map",
     "dev": "babel-node src/server.js",
-    "start": "webpack -d eval-source-map && babel-node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,10 +25,10 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "morgan": "^1.10.0",
     "sequelize-cli": "^6.5.2"
   },
   "dependencies": {
+    "@babel/cli": "^7.20.7",
     "axios": "^1.2.1",
     "babel-loader": "^9.1.0",
     "bcrypt": "^5.1.0",
