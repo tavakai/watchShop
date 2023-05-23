@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import Preloader from '../Preloader/Preloader';
+import React, { useState } from "react";
+import Preloader from "../Preloader/Preloader";
 
 export default function Orderform({ user }) {
-  // контролирует инпуты
-  const [input, setInput] = useState({ name: '', image: '' });
-  // выводит ошибку, если в заказе не все указано
+  const [input, setInput] = useState({ name: "", image: "" });
   const [message, setMessage] = useState(null);
-  // форма - пропадает, "Заказ отправлен!" - появляется
   const [orderTrue, setOrderTrue] = useState(null);
   const [isRequest, setIsRequest] = useState(false);
 
@@ -19,14 +16,14 @@ export default function Orderform({ user }) {
     e.preventDefault();
     if (user) {
       const response = await fetch(`/order/${user.id}`, {
-        method: 'POST',
-        headers: { 'Content-type': 'application/json;charSet=utf-8' },
+        method: "POST",
+        headers: { "Content-type": "application/json;charSet=utf-8" },
         body: JSON.stringify(input),
       });
 
       if (response.ok) {
         const data = await response.json();
-        setInput({ task: '', img: '' });
+        setInput({ task: "", img: "" });
         setMessage(data.message);
         setOrderTrue(true);
         setIsRequest(false);
@@ -35,7 +32,7 @@ export default function Orderform({ user }) {
         setMessage(data.message);
       }
     } else {
-      setMessage('Для заказа часов, вам необходимо зарегистрироваться.');
+      setMessage("Для заказа часов, вам необходимо зарегистрироваться.");
     }
   };
   return (
@@ -45,9 +42,9 @@ export default function Orderform({ user }) {
         <>
           {/* выводит "Заказ отправлен!" */}
           {message && (
-          <div className="orderInputOut">
-            <h2 className="orderMessage">{message}</h2>
-          </div>
+            <div className="orderInputOut">
+              <h2 className="orderMessage">{message}</h2>
+            </div>
           )}
         </>
       ) : (
@@ -56,19 +53,45 @@ export default function Orderform({ user }) {
           {/* выводит ошибку при заказе */}
           {message && <h2 className="orderInput ordeStatusRed">{message}</h2>}
           <div className="mb-3 orderInput">
-            <label htmlFor="exampleInputEmail1" className="form-label orderInput">Введите название ваших часов</label>
-            <input type="text" name="name" value={input.name} onChange={changeHandler} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <label
+              htmlFor="exampleInputEmail1"
+              className="form-label orderInput"
+            >
+              Введите название ваших часов
+            </label>
+            <input
+              type="text"
+              name="name"
+              value={input.name}
+              onChange={changeHandler}
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
           </div>
           <div className="mb-3 orderInput">
-            <label htmlFor="exampleInputPassword1" className="form-label">Укажите ссылку на пример подходящих вам часов</label>
-            <input type="text" name="image" value={input.image} onChange={changeHandler} className="form-control" id="exampleInputPassword1" />
+            <label htmlFor="exampleInputPassword1" className="form-label">
+              Укажите ссылку на пример подходящих вам часов
+            </label>
+            <input
+              type="text"
+              name="image"
+              value={input.image}
+              onChange={changeHandler}
+              className="form-control"
+              id="exampleInputPassword1"
+            />
           </div>
           <div className="orderCenter">
-            <button type="submit" className="btn btn-primary" disabled={isRequest ? 'disabled' : ''}>Заказать</button>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={isRequest ? "disabled" : ""}
+            >
+              Заказать
+            </button>
           </div>
-          {
-            isRequest && <Preloader />
-          }
+          {isRequest && <Preloader />}
         </form>
       )}
     </>
