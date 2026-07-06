@@ -14,18 +14,27 @@ router.get('/registration', (req, res) => {
 
 router.post('/registration', async (req, res) => {
   // забираем все нужные свойства
-  const { name, email, password } = req.body;
+  const {
+    name, email, password,
+  } = req.body;
   // если user ввел только пароль или только логин возвращаем сообщение которое покажем над формой
   if (!name || !email || !password) return res.status(400).json({ message: 'Необходимо заполнить все поля формы регистрации' });
   // нужно захэшировать пароль
   const hash = await bcrypt.hash(password, 7);
   try {
     // ищем есть ли пользователь в базе, если нет - записываем в базу
-    const [user, isCreated] = await User.findOrCreate({ where: { email }, defaults: { name, email, password: hash } });
+    const [user, isCreated] = await User.findOrCreate({
+      where: { email },
+      defaults: {
+        name, email, password: hash, isAdmin: false,
+      },
+    });
     // если уже зарегистрирован - возвращаем message
     if (!isCreated) return res.status(401).json({ message: 'Пользователь уже зарегистрирован!' });
     // записываем нового пользователя в сессию
-    req.session.user = { id: user.id, name: user.name, email: user.email };
+    req.session.user = {
+      id: user.id, name: user.name, email: user.email, isAdmin: false,
+    };
     res.sendStatus(200);
   } catch (err) {
     res.status(418).json({ message: 'Вы чайник' });

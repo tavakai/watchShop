@@ -133,3 +133,6 @@ dist
 public/js/app.js
 public/js/vendor.js
 sessions/
+
+#deploy
+distr
